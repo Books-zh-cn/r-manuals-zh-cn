@@ -1,0 +1,29 @@
+project:
+  type: book
+
+book:
+  title: "r-manuals-zh-cn"
+  date: "2025-08-07"
+  chapters:
+    - index.qmd
+    - part: 1-An-Introduction-to-R/1-An-Introduction-to-R.qmd
+      chapters:
+        - 1-An-Introduction-to-R/1-1-Introduction-and-preliminaries.qmd
+        - 1-An-Introduction-to-R/1-2-Simple-manipulations-numbers-and-vectors.qmd
+    - part: 2-R-Data-Import-Export/2-R-Data-Import-Export.qmd
+    - part: 3-R-Installation-and-Administration/3-R-Installation-and-Administration.qmd
+    - part: 4-Writing-R-Extensions/4-Writing-R-Extensions.qmd
+    - part: 5-The-R-language-definition/5-The-R-language-definition.qmd
+    - part: 6-R-Internals/6-R-Internals.qmd
+
+format:
+  html:
+    number-sections: false
+    lang: zh
+    theme:
+      - cosmo
+      - brand
+
+
+
+

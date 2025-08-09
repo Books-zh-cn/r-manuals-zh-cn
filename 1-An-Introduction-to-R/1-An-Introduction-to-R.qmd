@@ -1,0 +1,12 @@
+---
+title: "An Introduction to R"
+author:
+  - "**[翻译]** [TigerZ](https://github.com/ZhengTiger);"
+date: "2025-08-09"
+---
+
+这是 R("GNU S") 的介绍，一种语言和环境用于统计计算和图形。R 类似于 John Chambers 等人在 Bell Laboratories 开发的屡获殊荣的 S 系统。它提供了多种统计和图形技术（线性和非线性建模，统计测试，时间序列分析，分类，聚类，...）。
+
+本手册提供有关数据类型，编程元素，统计建模和图形的信息。
+
+本手册适用于 R，版本 4.5.1 (2025-06-13)。

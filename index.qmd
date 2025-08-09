@@ -1,0 +1,34 @@
+# The R Manuals
+
+::: callout-note
+**原文链接：**
+
+<https://cran.r-project.org/manuals.html>
+:::
+
+由 R 核心团队编辑。
+
+以下的 R 手册是在 Debian Linux 上创建的，并且可能与平台特定页面上的 Mac 或 Windows 手册有所不同，但是大多数部分对于所有平台都相同。每个平台的手册的正确版本是相应的 R 安装的一部分。这些手册随 R 变化，因此我们提供了最新发布的 R 版本（R-release），修补版本（R-Patched），以及即将发布的版本（R-devel）。
+
+在这里，它们可以作为 PDF 文件，EPUB 文件或直接浏览为 HTML：
+
+| Manual | R-release |
+|:--------|:---------|
+|**An Introduction to R** 是基于以前的“Notes on R”，对语言以及如何使用 R 进行统计分析和图形进行了介绍。| [HTML](https://cran.r-project.org/doc/manuals/r-release/R-intro.html) |
+|**R Data Import/Export** 描述 R 本身或通过 CRAN 可用的软件包中可用的导入导出设施。|[HTML](https://cran.r-project.org/doc/manuals/r-release/R-data.html)|
+|**R Installation and Administration**|[HTML](https://cran.r-project.org/doc/manuals/r-release/R-admin.html)|
+|**Writing R Extensions** 涵盖如何创建自己的软件包，编写 R 帮助文件以及外部语言（C，C ++，Fortran，...）接口。|[HTML](https://cran.r-project.org/doc/manuals/r-release/R-exts.html)|
+|**The R language definition** 草稿记录了语言本身。也就是说，它可以使用的对象以及表达式评估过程的详细信息，这些详细信息对于知道编程 R 函数时很有用。|[HTML](https://cran.r-project.org/doc/manuals/r-release/R-lang.html)|
+|**R Internals:** 是 R 的内部结构和编码标准的指南，用于从事 R 本身的核心团队。|[HTML](https://cran.r-project.org/doc/manuals/r-release/R-ints.html)|
+|**The R Reference Index:** 包含 R 标准的所有帮助文件，并以可打印的形式包含推荐的软件包。（9MB，大约 3500 页） |[PDF](https://cran.r-project.org/doc/manuals/r-release/fullrefman.pdf)|
+
+这些文档的最新版本的 LaTeX 或 TexInfo 源包含在每个 R 源分布中（在提取的存档的子目录 `doc/manual` 中）。手册的较旧版本可以在 R 源的各个档案中找到。手册的 HTML 版本也是大多数 R 安装的一部分（使用函数 `help.start()`）。
+
+在报告发布版本的任何问题之前，请检查手册中是否有 R-devel。
+
+
+
+
+
+
+

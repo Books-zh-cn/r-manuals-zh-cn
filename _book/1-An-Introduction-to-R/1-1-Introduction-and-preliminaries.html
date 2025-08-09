@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-Hans" xml:lang="zh-Hans"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.31">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="[翻译] TigerZ;">
+
+<title>1 介绍和前言 – r-manuals-zh-cn</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../1-An-Introduction-to-R/1-2-Simple-manipulations-numbers-and-vectors.html" rel="next">
+<link href="../1-An-Introduction-to-R/1-An-Introduction-to-R.html" rel="prev">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-364982630eef5352dd1537128a8ed5cb.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "没有结果",
+    "search-matching-documents-text": "匹配的文档",
+    "search-copy-link-title": "复制搜索链接",
+    "search-hide-matches-text": "隐藏其它匹配结果",
+    "search-more-match-text": "更多匹配结果",
+    "search-more-matches-text": "更多匹配结果",
+    "search-clear-button-title": "清除",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "取消",
+    "search-submit-button-title": "提交",
+    "search-label": "搜索"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="展开或折叠侧边栏导航" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../1-An-Introduction-to-R/1-An-Introduction-to-R.html">An Introduction to R</a></li><li class="breadcrumb-item"><a href="../1-An-Introduction-to-R/1-1-Introduction-and-preliminaries.html"><span class="chapter-title">1 介绍和前言</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="展开或折叠侧边栏导航" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="搜索" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../">r-manuals-zh-cn</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="搜索"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">The R Manuals</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../1-An-Introduction-to-R/1-An-Introduction-to-R.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">An Introduction to R</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="展开或折叠此栏">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../1-An-Introduction-to-R/1-1-Introduction-and-preliminaries.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">1 介绍和前言</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../1-An-Introduction-to-R/1-2-Simple-manipulations-numbers-and-vectors.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">2 简单的操纵；数字和向量</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">R Data Import/Export</span></span>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">R Installation and Administration</span></span>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">Writing R Extensions</span></span>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">The R language definition</span></span>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">6 R Internals</span></span>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">目录</h2>
+   
+  <ul>
+  <li><a href="#r-环境" id="toc-r-环境" class="nav-link active" data-scroll-target="#r-环境">1.1 R 环境</a></li>
+  <li><a href="#相关软件和文档" id="toc-相关软件和文档" class="nav-link" data-scroll-target="#相关软件和文档">1.2 相关软件和文档</a></li>
+  <li><a href="#r-和统计" id="toc-r-和统计" class="nav-link" data-scroll-target="#r-和统计">1.3 R 和统计</a></li>
+  <li><a href="#r-和窗口系统" id="toc-r-和窗口系统" class="nav-link" data-scroll-target="#r-和窗口系统">1.4 R 和窗口系统</a></li>
+  <li><a href="#交互式使用-r" id="toc-交互式使用-r" class="nav-link" data-scroll-target="#交互式使用-r">1.5 交互式使用 R</a></li>
+  <li><a href="#一个入门会话" id="toc-一个入门会话" class="nav-link" data-scroll-target="#一个入门会话">1.6 一个入门会话</a></li>
+  <li><a href="#获得函数和功能的帮助" id="toc-获得函数和功能的帮助" class="nav-link" data-scroll-target="#获得函数和功能的帮助">1.7 获得函数和功能的帮助</a></li>
+  <li><a href="#r-命令案例灵敏度等" id="toc-r-命令案例灵敏度等" class="nav-link" data-scroll-target="#r-命令案例灵敏度等">1.8 R 命令，案例灵敏度等。</a></li>
+  <li><a href="#召回和纠正以前的命令" id="toc-召回和纠正以前的命令" class="nav-link" data-scroll-target="#召回和纠正以前的命令">1.9 召回和纠正以前的命令</a></li>
+  <li><a href="#执行从输出或将输出转移到文件的命令" id="toc-执行从输出或将输出转移到文件的命令" class="nav-link" data-scroll-target="#执行从输出或将输出转移到文件的命令">1.10 执行从输出或将输出转移到文件的命令</a></li>
+  <li><a href="#数据永久性和删除对象" id="toc-数据永久性和删除对象" class="nav-link" data-scroll-target="#数据永久性和删除对象">1.11 数据永久性和删除对象</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../1-An-Introduction-to-R/1-An-Introduction-to-R.html">An Introduction to R</a></li><li class="breadcrumb-item"><a href="../1-An-Introduction-to-R/1-1-Introduction-and-preliminaries.html"><span class="chapter-title">1 介绍和前言</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-title">1 介绍和前言</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">作者</div>
+    <div class="quarto-title-meta-contents">
+             <p><strong>[翻译]</strong> <a href="https://github.com/ZhengTiger">TigerZ</a>; </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">发布于</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">2025年8月9日</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="r-环境" class="level2">
+<h2 class="anchored" data-anchor-id="r-环境">1.1 R 环境</h2>
+<p>R 是用于数据操作、计算、和图形显示的软件设施集成套件。除此之外它具有</p>
+<ul>
+<li>一套高效的数据处理和存储机制，</li>
+<li>一组针对数组（尤其是矩阵）运算的操作符，</li>
+<li>一套庞大、连贯且整合的中间工具集用于数据分析，</li>
+<li>用于数据分析和展示的图形功能，可直接在计算机上操作或输出硬拷贝，以及</li>
+<li>一种成熟、简洁且高效的编程语言（称为“S”），包含条件语句、循环、用户自定义递归函数及输入输出功能。（事实上，该系统提供的大部分函数本身就是用 S 语言编写的。）</li>
+</ul>
+<p>“环境（environment）”一词旨在强调它是一个经过全面规划、内在一致的系统，而非像其他数据分析软件那样，往往只是特定且僵化工具的简单堆砌。</p>
+<p>R 语言很大程度上是互动数据分析新方法的载体。它发展迅速，并通过大量扩展包不断丰富功能。然而，用 R 编写的大多数程序本质上是临时性的，仅为单次数据分析而撰写。</p>
+</section>
+<section id="相关软件和文档" class="level2">
+<h2 class="anchored" data-anchor-id="相关软件和文档">1.2 相关软件和文档</h2>
+<p>R 可被视为 S 语言的一种实现，而 S 语言由 Bell Laboratories 的 Rick Becker、John Chambers 和 Allan Wilks 开发，同时也是 S-PLUS 系统的基础。</p>
+<p>S 语言的发展历程以 John Chambers 及其合著者的四本著作为标志。对于 R 而言，基础参考书目是 Richard A. Becker、John M. Chambers 和 Allan R. Wilks 所著的《The New S Language: A Programming Environment for Data Analysis and Graphics》。1991 年发布的 S 语言新增特性则涵盖在 John M. Chambers 和 Trevor J. Hastie 主编的《Statistical Models in S》中。而方法包（methods package）中的形式化方法与类，基于 John M. Chambers 在《Programming with Data》中的描述。具体参考文献请查阅相关书目：<code>https://cran.r-project.org/doc/manuals/r-release/R-intro.html#References</code></p>
+<p>目前已有许多书籍介绍如何利用 R 进行数据分析和统计，且 S/S-PLUS 的文档通常也可用于 R，只需注意不同 S 语言实现之间的差异。更多信息请参阅 R FAQ 中的 What documentation exists for R? 部分：<code>https://cran.r-project.org/doc/manuals/r-release/R-FAQ.html#What-documentation-exists-for-R_003f</code></p>
+</section>
+<section id="r-和统计" class="level2">
+<h2 class="anchored" data-anchor-id="r-和统计">1.3 R 和统计</h2>
+<p>我们对 R 环境的介绍并未提及统计学，但许多人将 R 视为统计系统。我们更倾向于将其视为一个实现了众多经典与现代统计技术的环境。其中部分技术已内置在 base R 环境中，但更多功能以扩展包形式提供。R 自带了约 25 个扩展包（称为“标准包”和”推荐包”），而通过 CRAN 系列网站（<code>https://CRAN.R-project.org</code>）及其他平台还可获取更多资源。关于扩展包的详细信息将在后文说明（参见 Packages 章节）。</p>
+<p>虽然 R 支持绝大多数经典统计方法和许多最新技术，但用户可能需要主动探索才能充分调用这些功能。</p>
+<p>S 语言（以及继承其理念的 R）与其他主流统计系统在哲学层面存在显著差异。在 S 中，统计分析通常通过分步操作完成，中间结果存储于对象中。例如，SAS 和 SPSS 会直接输出大量回归分析或判别分析的结果，而 R 则仅提供精简输出，并将完整结果存储在拟合对象中，以便后续通过其他 R 函数进一步调用分析。</p>
+</section>
+<section id="r-和窗口系统" class="level2">
+<h2 class="anchored" data-anchor-id="r-和窗口系统">1.4 R 和窗口系统</h2>
+<p>使用 R 最便捷的方式是在运行窗口系统的图形工作站上操作。本指南主要面向具备此条件的用户。尽管我们会偶尔提及在 X Window 系统上使用 R 的情况，但所述内容普遍适用于任何 R 环境的实现。</p>
+<p>多数用户会发现自己时常需要直接与计算机操作系统进行交互。本指南主要讨论与 UNIX 系统操作系统的交互。若您在 Windows 或 macOS 系统下运行 R，则需对操作方式稍作调整。</p>
+<p>将工作站配置以充分发挥 R 可定制特性的过程虽简单直接，但略显繁琐，此处不再赘述。遇到困难的用户应寻求本地专家的帮助。</p>
+</section>
+<section id="交互式使用-r" class="level2">
+<h2 class="anchored" data-anchor-id="交互式使用-r">1.5 交互式使用 R</h2>
+<p>使用 R 程序时，当它等待输入命令时会显示提示符。默认提示符是<code>&gt;</code>，在 UNIX 系统中可能与 Shell 提示符相同，因此看起来可能没有任何变化。不过，如后文所示，您可以轻松更改 R 提示符。我们假设 UNIX 系统的 Shell 提示符是<code>$</code>。</p>
+<p>首次在 UNIX 系统下使用 R 的建议步骤如下：</p>
+<ol type="1">
+<li>创建一个单独的子目录（例如 <code>work</code>）来存放该问题要使用的数据文件。这将成为您处理该特定问题时的工作目录。</li>
+</ol>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="sc">$</span> mkdir work</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="sc">$</span> cd work</span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="2" type="1">
+<li>输入以下命令启动 R 程序：</li>
+</ol>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="sc">$</span> R</span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="3" type="1">
+<li><p>此时可以输入 R 命令（详见后文）。</p></li>
+<li><p>要退出 R 程序，输入命令：</p></li>
+</ol>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">q</span>()</span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>此时系统会询问是否要保存 R 会话（R session）中的数据。在某些系统中会弹出对话框，而在其他系统中会出现文本提示，您可以回答 <code>yes</code>、<code>no</code>、<code>cancel</code>（输入首字母缩写即可），分别表示退出前保存数据、不保存退出、返回 R 会话。保存的数据将在以后的 R 会话中可用。</p>
+<p>后续使用 R 的步骤很简单：</p>
+<ol type="1">
+<li>进入 <code>work</code> 工作目录并像之前一样启动程序：</li>
+</ol>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="sc">$</span> cd work</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="sc">$</span> R</span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="2" type="1">
+<li>使用 R 程序，在会话结束时用<code>q()</code>命令退出。</li>
+</ol>
+<p>在 Windows 系统下使用 R 的基本步骤相同。创建一个文件夹作为工作目录，并在 R 快捷方式的”起始位置”字段中设置该目录，然后双击图标启动 R。</p>
+</section>
+<section id="一个入门会话" class="level2">
+<h2 class="anchored" data-anchor-id="一个入门会话">1.6 一个入门会话</h2>
+<p>强烈建议想要在上机操作前先感受 R 语言的读者，先完成 A sample session 中提供的入门教程：<code>https://cran.r-project.org/doc/manuals/r-release/R-intro.html#A-sample-session</code></p>
+</section>
+<section id="获得函数和功能的帮助" class="level2">
+<h2 class="anchored" data-anchor-id="获得函数和功能的帮助">1.7 获得函数和功能的帮助</h2>
+<p>R 内置了帮助功能，类似于 UNIX 系统中的 man 手册功能。要获取特定函数（如 <code>solve</code>）的详细信息，可使用命令：</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">help</span>(solve)</span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>或等效形式：</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> ?solve</span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>对于包含特殊字符的功能名称，参数需用双引号或单引号包裹成”字符串”。此规则同样适用于 <code>if</code>、<code>for</code>、<code>function</code> 等具有语法含义的关键词：</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">help</span>(<span class="st">"[["</span>)</span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>两种引号均可用于互相转义，例如字符串<code>"It's important"</code>。我们建议优先使用双引号。</p>
+<p>在多数 R 安装中，可通过以下命令启动 HTML 格式的帮助系统：</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">help.start</span>()</span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>该命令将打开网页浏览器，支持通过超链接浏览帮助文档。在 UNIX 系统中，后续帮助请求会自动跳转至该 HTML 帮助系统。由 <code>help.start()</code> 加载页面中的”Search Engine and Keywords”链接尤为实用，它提供高级概念列表并能搜索所有可用函数，是快速了解 R 功能广度的有效方式。</p>
+<p><code>help.search</code> 命令（或简写<code>??</code>）支持多种方式的帮助搜索，例如：</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> ??solve</span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>输入<code>?help.search</code>可查看详细用法和更多示例。</p>
+<p>通常可通过以下命令运行帮助主题中的示例代码：</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">example</span>(topic)</span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Windows 版 R 还提供其他可选帮助系统，使用：</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> ?help</span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>可获取更多详细信息。</p>
+</section>
+<section id="r-命令案例灵敏度等" class="level2">
+<h2 class="anchored" data-anchor-id="r-命令案例灵敏度等">1.8 R 命令，案例灵敏度等。</h2>
+<p>从技术角度而言，R 是一种具有极简语法的表达式语言。与大多数基于 UNIX 的软件包一样，R 区分大小写，因此 <code>A</code> 和 <code>a</code> 属于不同符号，会指向不同变量。R 命名中可使用的符号集取决于运行 R 的操作系统和所在国家（具体取决于系统区域设置）。通常允许使用所有字母数字字符（在某些国家/地区还包括带重音符号的字母）以及”<code>.</code>“和”<code>_</code>“，但要求名称必须以字母或”<code>.</code>“开头，若以”<code>.</code>“开头则第二个字符不能为数字。名称长度理论上不受限制。</p>
+<p>基本指令由表达式或赋值构成。若输入表达式作为指令，R 会对其求值并打印结果（除非刻意设置为不显示），但该值不会被保存。赋值操作同样会对表达式求值，但会将结果传递给变量且不会自动打印输出。</p>
+<p>指令之间可通过分号（“<code>;</code>”）或换行符分隔。基础指令可用大括号（“<code>{</code>”和”<code>}</code>“）组合成复合表达式。注释几乎可出现在任何位置，以井号（”<code>#</code>“）开头，该行<code>#</code>号后的所有内容均视为注释。</p>
+<p>若指令在行尾尚未输入完整，R 会显示不同的提示符（默认为”<code>+</code>“）继续读取输入，直到语法结构完整为止。该续行提示符可由用户自定义。本文通常省略续行提示符，仅通过简单缩进表示续行。</p>
+<p>控制台输入的指令行长度限制约为 4095 字节（非字符数）。</p>
+</section>
+<section id="召回和纠正以前的命令" class="level2">
+<h2 class="anchored" data-anchor-id="召回和纠正以前的命令">1.9 召回和纠正以前的命令</h2>
+<p>在多数 UNIX 系统和 Windows 系统中，R 提供了调用和重新执行历史命令的功能。通过键盘的上下方向键，可前后浏览命令历史记录。定位到所需命令后，使用左右方向键移动光标进行编辑：用 <code>DEL</code> 键删除字符，或用其他键插入字符。更多细节将在后续章节说明，参见 The command-line editor 部分：<code>https://cran.r-project.org/doc/manuals/r-release/R-intro.html#The-command_002dline-editor</code></p>
+<p>UNIX 系统下的命令调取与编辑功能支持高度自定义，具体配置方法可参考 <strong>readline</strong> 函数库的说明文档。</p>
+<p>此外，Emacs 文本编辑器通过 ESS（Emacs Speaks Statistics）为 R 的交互操作提供了更全面的支持机制。详细信息请参阅 R 常见问题中的 R and Emacs 章节：<code>https://cran.r-project.org/doc/manuals/r-release/R-FAQ.html#R-and-Emacs</code></p>
+</section>
+<section id="执行从输出或将输出转移到文件的命令" class="level2">
+<h2 class="anchored" data-anchor-id="执行从输出或将输出转移到文件的命令">1.10 执行从输出或将输出转移到文件的命令</h2>
+<p>若将命令保存在外部文件中（例如工作目录<code>work</code>下的<code>commands.R</code>文件），可以在 R 会话中随时通过以下命令执行这些命令：</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">source</span>(<span class="st">"commands.R"</span>)</span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>在 Windows 系统中，<code>Source</code>选项也可在<code>File</code>菜单中找到。使用<code>sink</code>函数：</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">sink</span>(<span class="st">"record.lis"</span>)</span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>可将后续所有控制台输出重定向到外部文件 <code>record.lis</code>。执行命令：</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">sink</span>()</span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>即可重新将输出恢复至控制台。</p>
+</section>
+<section id="数据永久性和删除对象" class="level2">
+<h2 class="anchored" data-anchor-id="数据永久性和删除对象">1.11 数据永久性和删除对象</h2>
+<p>R 语言中创建和操作的基本单位称为对象(<code>objects</code>)。这些对象可以是变量、数值数组、字符串、函数，或是基于这些元素构建的更复杂结构。</p>
+<p>在 R 会话过程中，对象会被创建并以名称存储（我们将在下一节详述这一机制）。使用命令：</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">objects</span>()</span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>或等效命令：</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span>()</span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>可显示当前 R 工作空间中存储的（大多数）对象名称。这些被存储的对象集合统称为工作空间(<code>workspace</code>)。</p>
+<p>要删除对象可使用<code>rm</code>函数：</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">rm</span>(x, y, z, ink, junk, temp, foo, bar)</span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>R 会话中创建的所有对象都能永久保存到文件中供后续使用。每次 R 会话结束时，系统会提示是否保存当前对象。若选择保存，对象将被写入当前目录下的<code>.RData</code>文件，而会话中使用的命令则保存在<code>.Rhistory</code>文件中。</p>
+<p>当后续从同一目录启动 R 时，系统会自动从此文件恢复工作空间，同时加载关联的命令历史记录。</p>
+<p>建议为不同的 R 分析项目使用独立的工作目录。分析过程中常会创建名为<code>x</code>、<code>y</code>的对象，这些名称在单一分析背景下可能具有明确含义，但若在同一目录下进行多项分析，则很难区分这些对象的实际意义。</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "已复制");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "已复制");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../1-An-Introduction-to-R/1-An-Introduction-to-R.html" class="pagination-link" aria-label="An Introduction to R">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">An Introduction to R</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../1-An-Introduction-to-R/1-2-Simple-manipulations-numbers-and-vectors.html" class="pagination-link" aria-label="2 简单的操纵；数字和向量">
+        <span class="nav-page-text"><span class="chapter-title">2 简单的操纵；数字和向量</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
