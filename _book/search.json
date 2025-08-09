@@ -22,221 +22,221 @@
   {
     "objectID": "1-An-Introduction-to-R/1-1-Introduction-and-preliminaries.html",
     "href": "1-An-Introduction-to-R/1-1-Introduction-and-preliminaries.html",
-    "title": "1 介绍和前言",
+    "title": "1 Introduction and preliminaries",
     "section": "",
     "text": "1.1 R 环境\nR 是用于数据操作、计算、和图形显示的软件设施集成套件。除此之外它具有\n“环境（environment）”一词旨在强调它是一个经过全面规划、内在一致的系统，而非像其他数据分析软件那样，往往只是特定且僵化工具的简单堆砌。\nR 语言很大程度上是互动数据分析新方法的载体。它发展迅速，并通过大量扩展包不断丰富功能。然而，用 R 编写的大多数程序本质上是临时性的，仅为单次数据分析而撰写。",
     "crumbs": [
       "An Introduction to R",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>1 介绍和前言</span>"
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>1 Introduction and preliminaries</span>"
     ]
   },
   {
     "objectID": "1-An-Introduction-to-R/1-1-Introduction-and-preliminaries.html#r-环境",
     "href": "1-An-Introduction-to-R/1-1-Introduction-and-preliminaries.html#r-环境",
-    "title": "1 介绍和前言",
+    "title": "1 Introduction and preliminaries",
     "section": "",
     "text": "一套高效的数据处理和存储机制，\n一组针对数组（尤其是矩阵）运算的操作符，\n一套庞大、连贯且整合的中间工具集用于数据分析，\n用于数据分析和展示的图形功能，可直接在计算机上操作或输出硬拷贝，以及\n一种成熟、简洁且高效的编程语言（称为“S”），包含条件语句、循环、用户自定义递归函数及输入输出功能。（事实上，该系统提供的大部分函数本身就是用 S 语言编写的。）",
     "crumbs": [
       "An Introduction to R",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>1 介绍和前言</span>"
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>1 Introduction and preliminaries</span>"
     ]
   },
   {
     "objectID": "1-An-Introduction-to-R/1-1-Introduction-and-preliminaries.html#相关软件和文档",
     "href": "1-An-Introduction-to-R/1-1-Introduction-and-preliminaries.html#相关软件和文档",
-    "title": "1 介绍和前言",
+    "title": "1 Introduction and preliminaries",
     "section": "1.2 相关软件和文档",
     "text": "1.2 相关软件和文档\nR 可被视为 S 语言的一种实现，而 S 语言由 Bell Laboratories 的 Rick Becker、John Chambers 和 Allan Wilks 开发，同时也是 S-PLUS 系统的基础。\nS 语言的发展历程以 John Chambers 及其合著者的四本著作为标志。对于 R 而言，基础参考书目是 Richard A. Becker、John M. Chambers 和 Allan R. Wilks 所著的《The New S Language: A Programming Environment for Data Analysis and Graphics》。1991 年发布的 S 语言新增特性则涵盖在 John M. Chambers 和 Trevor J. Hastie 主编的《Statistical Models in S》中。而方法包（methods package）中的形式化方法与类，基于 John M. Chambers 在《Programming with Data》中的描述。具体参考文献请查阅相关书目：https://cran.r-project.org/doc/manuals/r-release/R-intro.html#References\n目前已有许多书籍介绍如何利用 R 进行数据分析和统计，且 S/S-PLUS 的文档通常也可用于 R，只需注意不同 S 语言实现之间的差异。更多信息请参阅 R FAQ 中的 What documentation exists for R? 部分：https://cran.r-project.org/doc/manuals/r-release/R-FAQ.html#What-documentation-exists-for-R_003f",
     "crumbs": [
       "An Introduction to R",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>1 介绍和前言</span>"
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>1 Introduction and preliminaries</span>"
     ]
   },
   {
     "objectID": "1-An-Introduction-to-R/1-1-Introduction-and-preliminaries.html#r-和统计",
     "href": "1-An-Introduction-to-R/1-1-Introduction-and-preliminaries.html#r-和统计",
-    "title": "1 介绍和前言",
+    "title": "1 Introduction and preliminaries",
     "section": "1.3 R 和统计",
     "text": "1.3 R 和统计\n我们对 R 环境的介绍并未提及统计学，但许多人将 R 视为统计系统。我们更倾向于将其视为一个实现了众多经典与现代统计技术的环境。其中部分技术已内置在 base R 环境中，但更多功能以扩展包形式提供。R 自带了约 25 个扩展包（称为“标准包”和”推荐包”），而通过 CRAN 系列网站（https://CRAN.R-project.org）及其他平台还可获取更多资源。关于扩展包的详细信息将在后文说明（参见 Packages 章节）。\n虽然 R 支持绝大多数经典统计方法和许多最新技术，但用户可能需要主动探索才能充分调用这些功能。\nS 语言（以及继承其理念的 R）与其他主流统计系统在哲学层面存在显著差异。在 S 中，统计分析通常通过分步操作完成，中间结果存储于对象中。例如，SAS 和 SPSS 会直接输出大量回归分析或判别分析的结果，而 R 则仅提供精简输出，并将完整结果存储在拟合对象中，以便后续通过其他 R 函数进一步调用分析。",
     "crumbs": [
       "An Introduction to R",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>1 介绍和前言</span>"
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>1 Introduction and preliminaries</span>"
     ]
   },
   {
     "objectID": "1-An-Introduction-to-R/1-1-Introduction-and-preliminaries.html#r-和窗口系统",
     "href": "1-An-Introduction-to-R/1-1-Introduction-and-preliminaries.html#r-和窗口系统",
-    "title": "1 介绍和前言",
+    "title": "1 Introduction and preliminaries",
     "section": "1.4 R 和窗口系统",
     "text": "1.4 R 和窗口系统\n使用 R 最便捷的方式是在运行窗口系统的图形工作站上操作。本指南主要面向具备此条件的用户。尽管我们会偶尔提及在 X Window 系统上使用 R 的情况，但所述内容普遍适用于任何 R 环境的实现。\n多数用户会发现自己时常需要直接与计算机操作系统进行交互。本指南主要讨论与 UNIX 系统操作系统的交互。若您在 Windows 或 macOS 系统下运行 R，则需对操作方式稍作调整。\n将工作站配置以充分发挥 R 可定制特性的过程虽简单直接，但略显繁琐，此处不再赘述。遇到困难的用户应寻求本地专家的帮助。",
     "crumbs": [
       "An Introduction to R",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>1 介绍和前言</span>"
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>1 Introduction and preliminaries</span>"
     ]
   },
   {
     "objectID": "1-An-Introduction-to-R/1-1-Introduction-and-preliminaries.html#交互式使用-r",
     "href": "1-An-Introduction-to-R/1-1-Introduction-and-preliminaries.html#交互式使用-r",
-    "title": "1 介绍和前言",
+    "title": "1 Introduction and preliminaries",
     "section": "1.5 交互式使用 R",
     "text": "1.5 交互式使用 R\n使用 R 程序时，当它等待输入命令时会显示提示符。默认提示符是&gt;，在 UNIX 系统中可能与 Shell 提示符相同，因此看起来可能没有任何变化。不过，如后文所示，您可以轻松更改 R 提示符。我们假设 UNIX 系统的 Shell 提示符是$。\n首次在 UNIX 系统下使用 R 的建议步骤如下：\n\n创建一个单独的子目录（例如 work）来存放该问题要使用的数据文件。这将成为您处理该特定问题时的工作目录。\n\n$ mkdir work\n$ cd work\n\n输入以下命令启动 R 程序：\n\n$ R\n\n此时可以输入 R 命令（详见后文）。\n要退出 R 程序，输入命令：\n\n&gt; q()\n此时系统会询问是否要保存 R 会话（R session）中的数据。在某些系统中会弹出对话框，而在其他系统中会出现文本提示，您可以回答 yes、no、cancel（输入首字母缩写即可），分别表示退出前保存数据、不保存退出、返回 R 会话。保存的数据将在以后的 R 会话中可用。\n后续使用 R 的步骤很简单：\n\n进入 work 工作目录并像之前一样启动程序：\n\n$ cd work\n$ R\n\n使用 R 程序，在会话结束时用q()命令退出。\n\n在 Windows 系统下使用 R 的基本步骤相同。创建一个文件夹作为工作目录，并在 R 快捷方式的”起始位置”字段中设置该目录，然后双击图标启动 R。",
     "crumbs": [
       "An Introduction to R",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>1 介绍和前言</span>"
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>1 Introduction and preliminaries</span>"
     ]
   },
   {
     "objectID": "1-An-Introduction-to-R/1-1-Introduction-and-preliminaries.html#一个入门会话",
     "href": "1-An-Introduction-to-R/1-1-Introduction-and-preliminaries.html#一个入门会话",
-    "title": "1 介绍和前言",
+    "title": "1 Introduction and preliminaries",
     "section": "1.6 一个入门会话",
     "text": "1.6 一个入门会话\n强烈建议想要在上机操作前先感受 R 语言的读者，先完成 A sample session 中提供的入门教程：https://cran.r-project.org/doc/manuals/r-release/R-intro.html#A-sample-session",
     "crumbs": [
       "An Introduction to R",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>1 介绍和前言</span>"
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>1 Introduction and preliminaries</span>"
     ]
   },
   {
     "objectID": "1-An-Introduction-to-R/1-1-Introduction-and-preliminaries.html#获得函数和功能的帮助",
     "href": "1-An-Introduction-to-R/1-1-Introduction-and-preliminaries.html#获得函数和功能的帮助",
-    "title": "1 介绍和前言",
+    "title": "1 Introduction and preliminaries",
     "section": "1.7 获得函数和功能的帮助",
     "text": "1.7 获得函数和功能的帮助\nR 内置了帮助功能，类似于 UNIX 系统中的 man 手册功能。要获取特定函数（如 solve）的详细信息，可使用命令：\n&gt; help(solve)\n或等效形式：\n&gt; ?solve\n对于包含特殊字符的功能名称，参数需用双引号或单引号包裹成”字符串”。此规则同样适用于 if、for、function 等具有语法含义的关键词：\n&gt; help(\"[[\")\n两种引号均可用于互相转义，例如字符串\"It's important\"。我们建议优先使用双引号。\n在多数 R 安装中，可通过以下命令启动 HTML 格式的帮助系统：\n&gt; help.start()\n该命令将打开网页浏览器，支持通过超链接浏览帮助文档。在 UNIX 系统中，后续帮助请求会自动跳转至该 HTML 帮助系统。由 help.start() 加载页面中的”Search Engine and Keywords”链接尤为实用，它提供高级概念列表并能搜索所有可用函数，是快速了解 R 功能广度的有效方式。\nhelp.search 命令（或简写??）支持多种方式的帮助搜索，例如：\n&gt; ??solve\n输入?help.search可查看详细用法和更多示例。\n通常可通过以下命令运行帮助主题中的示例代码：\n&gt; example(topic)\nWindows 版 R 还提供其他可选帮助系统，使用：\n&gt; ?help\n可获取更多详细信息。",
     "crumbs": [
       "An Introduction to R",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>1 介绍和前言</span>"
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>1 Introduction and preliminaries</span>"
     ]
   },
   {
     "objectID": "1-An-Introduction-to-R/1-1-Introduction-and-preliminaries.html#r-命令案例灵敏度等",
     "href": "1-An-Introduction-to-R/1-1-Introduction-and-preliminaries.html#r-命令案例灵敏度等",
-    "title": "1 介绍和前言",
+    "title": "1 Introduction and preliminaries",
     "section": "1.8 R 命令，案例灵敏度等。",
     "text": "1.8 R 命令，案例灵敏度等。\n从技术角度而言，R 是一种具有极简语法的表达式语言。与大多数基于 UNIX 的软件包一样，R 区分大小写，因此 A 和 a 属于不同符号，会指向不同变量。R 命名中可使用的符号集取决于运行 R 的操作系统和所在国家（具体取决于系统区域设置）。通常允许使用所有字母数字字符（在某些国家/地区还包括带重音符号的字母）以及”.“和”_“，但要求名称必须以字母或”.“开头，若以”.“开头则第二个字符不能为数字。名称长度理论上不受限制。\n基本指令由表达式或赋值构成。若输入表达式作为指令，R 会对其求值并打印结果（除非刻意设置为不显示），但该值不会被保存。赋值操作同样会对表达式求值，但会将结果传递给变量且不会自动打印输出。\n指令之间可通过分号（“;”）或换行符分隔。基础指令可用大括号（“{”和”}“）组合成复合表达式。注释几乎可出现在任何位置，以井号（”#“）开头，该行#号后的所有内容均视为注释。\n若指令在行尾尚未输入完整，R 会显示不同的提示符（默认为”+“）继续读取输入，直到语法结构完整为止。该续行提示符可由用户自定义。本文通常省略续行提示符，仅通过简单缩进表示续行。\n控制台输入的指令行长度限制约为 4095 字节（非字符数）。",
     "crumbs": [
       "An Introduction to R",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>1 介绍和前言</span>"
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>1 Introduction and preliminaries</span>"
     ]
   },
   {
     "objectID": "1-An-Introduction-to-R/1-1-Introduction-and-preliminaries.html#召回和纠正以前的命令",
     "href": "1-An-Introduction-to-R/1-1-Introduction-and-preliminaries.html#召回和纠正以前的命令",
-    "title": "1 介绍和前言",
+    "title": "1 Introduction and preliminaries",
     "section": "1.9 召回和纠正以前的命令",
     "text": "1.9 召回和纠正以前的命令\n在多数 UNIX 系统和 Windows 系统中，R 提供了调用和重新执行历史命令的功能。通过键盘的上下方向键，可前后浏览命令历史记录。定位到所需命令后，使用左右方向键移动光标进行编辑：用 DEL 键删除字符，或用其他键插入字符。更多细节将在后续章节说明，参见 The command-line editor 部分：https://cran.r-project.org/doc/manuals/r-release/R-intro.html#The-command_002dline-editor\nUNIX 系统下的命令调取与编辑功能支持高度自定义，具体配置方法可参考 readline 函数库的说明文档。\n此外，Emacs 文本编辑器通过 ESS（Emacs Speaks Statistics）为 R 的交互操作提供了更全面的支持机制。详细信息请参阅 R 常见问题中的 R and Emacs 章节：https://cran.r-project.org/doc/manuals/r-release/R-FAQ.html#R-and-Emacs",
     "crumbs": [
       "An Introduction to R",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>1 介绍和前言</span>"
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>1 Introduction and preliminaries</span>"
     ]
   },
   {
     "objectID": "1-An-Introduction-to-R/1-1-Introduction-and-preliminaries.html#执行从输出或将输出转移到文件的命令",
     "href": "1-An-Introduction-to-R/1-1-Introduction-and-preliminaries.html#执行从输出或将输出转移到文件的命令",
-    "title": "1 介绍和前言",
+    "title": "1 Introduction and preliminaries",
     "section": "1.10 执行从输出或将输出转移到文件的命令",
     "text": "1.10 执行从输出或将输出转移到文件的命令\n若将命令保存在外部文件中（例如工作目录work下的commands.R文件），可以在 R 会话中随时通过以下命令执行这些命令：\n&gt; source(\"commands.R\")\n在 Windows 系统中，Source选项也可在File菜单中找到。使用sink函数：\n&gt; sink(\"record.lis\")\n可将后续所有控制台输出重定向到外部文件 record.lis。执行命令：\n&gt; sink()\n即可重新将输出恢复至控制台。",
     "crumbs": [
       "An Introduction to R",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>1 介绍和前言</span>"
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>1 Introduction and preliminaries</span>"
     ]
   },
   {
     "objectID": "1-An-Introduction-to-R/1-1-Introduction-and-preliminaries.html#数据永久性和删除对象",
     "href": "1-An-Introduction-to-R/1-1-Introduction-and-preliminaries.html#数据永久性和删除对象",
-    "title": "1 介绍和前言",
+    "title": "1 Introduction and preliminaries",
     "section": "1.11 数据永久性和删除对象",
     "text": "1.11 数据永久性和删除对象\nR 语言中创建和操作的基本单位称为对象(objects)。这些对象可以是变量、数值数组、字符串、函数，或是基于这些元素构建的更复杂结构。\n在 R 会话过程中，对象会被创建并以名称存储（我们将在下一节详述这一机制）。使用命令：\n&gt; objects()\n或等效命令：\nls()\n可显示当前 R 工作空间中存储的（大多数）对象名称。这些被存储的对象集合统称为工作空间(workspace)。\n要删除对象可使用rm函数：\n&gt; rm(x, y, z, ink, junk, temp, foo, bar)\nR 会话中创建的所有对象都能永久保存到文件中供后续使用。每次 R 会话结束时，系统会提示是否保存当前对象。若选择保存，对象将被写入当前目录下的.RData文件，而会话中使用的命令则保存在.Rhistory文件中。\n当后续从同一目录启动 R 时，系统会自动从此文件恢复工作空间，同时加载关联的命令历史记录。\n建议为不同的 R 分析项目使用独立的工作目录。分析过程中常会创建名为x、y的对象，这些名称在单一分析背景下可能具有明确含义，但若在同一目录下进行多项分析，则很难区分这些对象的实际意义。",
     "crumbs": [
       "An Introduction to R",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>1 介绍和前言</span>"
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>1 Introduction and preliminaries</span>"
     ]
   },
   {
     "objectID": "1-An-Introduction-to-R/1-2-Simple-manipulations-numbers-and-vectors.html",
     "href": "1-An-Introduction-to-R/1-2-Simple-manipulations-numbers-and-vectors.html",
-    "title": "2 简单的操纵；数字和向量",
+    "title": "2 Simple manipulations; numbers and vectors",
     "section": "",
     "text": "2.1 向量和作业",
     "crumbs": [
       "An Introduction to R",
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>2 简单的操纵；数字和向量</span>"
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>2 Simple manipulations; numbers and vectors</span>"
     ]
   },
   {
     "objectID": "1-An-Introduction-to-R/1-2-Simple-manipulations-numbers-and-vectors.html#矢量算术",
     "href": "1-An-Introduction-to-R/1-2-Simple-manipulations-numbers-and-vectors.html#矢量算术",
-    "title": "2 简单的操纵；数字和向量",
+    "title": "2 Simple manipulations; numbers and vectors",
     "section": "2.2 矢量算术",
     "text": "2.2 矢量算术",
     "crumbs": [
       "An Introduction to R",
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>2 简单的操纵；数字和向量</span>"
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>2 Simple manipulations; numbers and vectors</span>"
     ]
   },
   {
     "objectID": "1-An-Introduction-to-R/1-2-Simple-manipulations-numbers-and-vectors.html#生成规则序列",
     "href": "1-An-Introduction-to-R/1-2-Simple-manipulations-numbers-and-vectors.html#生成规则序列",
-    "title": "2 简单的操纵；数字和向量",
+    "title": "2 Simple manipulations; numbers and vectors",
     "section": "2.3 生成规则序列",
     "text": "2.3 生成规则序列",
     "crumbs": [
       "An Introduction to R",
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>2 简单的操纵；数字和向量</span>"
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>2 Simple manipulations; numbers and vectors</span>"
     ]
   },
   {
     "objectID": "1-An-Introduction-to-R/1-2-Simple-manipulations-numbers-and-vectors.html#逻辑向量",
     "href": "1-An-Introduction-to-R/1-2-Simple-manipulations-numbers-and-vectors.html#逻辑向量",
-    "title": "2 简单的操纵；数字和向量",
+    "title": "2 Simple manipulations; numbers and vectors",
     "section": "2.4 逻辑向量",
     "text": "2.4 逻辑向量",
     "crumbs": [
       "An Introduction to R",
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>2 简单的操纵；数字和向量</span>"
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>2 Simple manipulations; numbers and vectors</span>"
     ]
   },
   {
     "objectID": "1-An-Introduction-to-R/1-2-Simple-manipulations-numbers-and-vectors.html#缺失值",
     "href": "1-An-Introduction-to-R/1-2-Simple-manipulations-numbers-and-vectors.html#缺失值",
-    "title": "2 简单的操纵；数字和向量",
+    "title": "2 Simple manipulations; numbers and vectors",
     "section": "2.5 缺失值",
     "text": "2.5 缺失值",
     "crumbs": [
       "An Introduction to R",
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>2 简单的操纵；数字和向量</span>"
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>2 Simple manipulations; numbers and vectors</span>"
     ]
   },
   {
     "objectID": "1-An-Introduction-to-R/1-2-Simple-manipulations-numbers-and-vectors.html#字符向量",
     "href": "1-An-Introduction-to-R/1-2-Simple-manipulations-numbers-and-vectors.html#字符向量",
-    "title": "2 简单的操纵；数字和向量",
+    "title": "2 Simple manipulations; numbers and vectors",
     "section": "2.6 字符向量",
     "text": "2.6 字符向量",
     "crumbs": [
       "An Introduction to R",
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>2 简单的操纵；数字和向量</span>"
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>2 Simple manipulations; numbers and vectors</span>"
     ]
   },
   {
     "objectID": "1-An-Introduction-to-R/1-2-Simple-manipulations-numbers-and-vectors.html#索引向量数据集的子集选择与修改",
     "href": "1-An-Introduction-to-R/1-2-Simple-manipulations-numbers-and-vectors.html#索引向量数据集的子集选择与修改",
-    "title": "2 简单的操纵；数字和向量",
+    "title": "2 Simple manipulations; numbers and vectors",
     "section": "2.7 索引向量：数据集的子集选择与修改",
     "text": "2.7 索引向量：数据集的子集选择与修改",
     "crumbs": [
       "An Introduction to R",
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>2 简单的操纵；数字和向量</span>"
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>2 Simple manipulations; numbers and vectors</span>"
     ]
   },
   {
     "objectID": "1-An-Introduction-to-R/1-2-Simple-manipulations-numbers-and-vectors.html#其他对象类型",
     "href": "1-An-Introduction-to-R/1-2-Simple-manipulations-numbers-and-vectors.html#其他对象类型",
-    "title": "2 简单的操纵；数字和向量",
+    "title": "2 Simple manipulations; numbers and vectors",
     "section": "2.8 其他对象类型",
     "text": "2.8 其他对象类型",
     "crumbs": [
       "An Introduction to R",
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>2 简单的操纵；数字和向量</span>"
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>2 Simple manipulations; numbers and vectors</span>"
     ]
   }
 ]

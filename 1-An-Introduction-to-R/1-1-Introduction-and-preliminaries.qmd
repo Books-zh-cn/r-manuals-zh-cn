@@ -24,14 +24,14 @@ R 语言很大程度上是互动数据分析新方法的载体。它发展迅速
 
 R 可被视为 S 语言的一种实现，而 S 语言由 Bell Laboratories 的 Rick Becker、John Chambers 和 Allan Wilks 开发，同时也是 S-PLUS 系统的基础。
 
-S 语言的发展历程以 John Chambers 及其合著者的四本著作为标志。对于 R 而言，基础参考书目是 Richard A. Becker、John M. Chambers 和 Allan R. Wilks 所著的《The New S Language: A Programming Environment for Data Analysis and Graphics》。1991 年发布的 S 语言新增特性则涵盖在 John M. Chambers 和 Trevor J. Hastie 主编的《Statistical Models in S》中。而方法包（methods package）中的形式化方法与类，基于 John M. Chambers 在《Programming with Data》中的描述。具体参考文献请查阅相关书目：`https://cran.r-project.org/doc/manuals/r-release/R-intro.html#References`
+S 语言的发展历程以 John Chambers 及其合著者的四本著作为标志。对于 R 而言，基础参考书目是 Richard A. Becker、John M. Chambers 和 Allan R. Wilks 所著的《The New S Language: A Programming Environment for Data Analysis and Graphics》。1991 年发布的 S 语言新增特性则涵盖在 John M. Chambers 和 Trevor J. Hastie 主编的《Statistical Models in S》中。而方法包（methods package）中的形式化方法与类，基于 John M. Chambers 在《Programming with Data》中的描述。具体参考文献请查阅 [References](https://cran.r-project.org/doc/manuals/r-release/R-intro.html#References)。
 
-目前已有许多书籍介绍如何利用 R 进行数据分析和统计，且 S/S-PLUS 的文档通常也可用于 R，只需注意不同 S 语言实现之间的差异。更多信息请参阅 R FAQ 中的 What documentation exists for R? 部分：`https://cran.r-project.org/doc/manuals/r-release/R-FAQ.html#What-documentation-exists-for-R_003f`
+目前已有许多书籍介绍如何利用 R 进行数据分析和统计，且 S/S-PLUS 的文档通常也可用于 R，只需注意不同 S 语言实现之间的差异。更多信息请参阅 R FAQ 中的 [What documentation exists for R?](https://cran.r-project.org/doc/manuals/r-release/R-FAQ.html#What-documentation-exists-for-R_003f) 部分。
 
 
 ## 1.3 R 和统计
 
-我们对 R 环境的介绍并未提及统计学，但许多人将 R 视为统计系统。我们更倾向于将其视为一个实现了众多经典与现代统计技术的环境。其中部分技术已内置在 base R 环境中，但更多功能以扩展包形式提供。R 自带了约 25 个扩展包（称为“标准包”和"推荐包"），而通过 CRAN 系列网站（`https://CRAN.R-project.org`）及其他平台还可获取更多资源。关于扩展包的详细信息将在后文说明（参见 Packages 章节）。
+我们对 R 环境的介绍并未提及统计学，但许多人将 R 视为统计系统。我们更倾向于将其视为一个实现了众多经典与现代统计技术的环境。其中部分技术已内置在 base R 环境中，但更多功能以扩展包形式提供。R 自带了约 25 个扩展包（称为“标准包”和"推荐包"），而通过 CRAN 系列网站（<https://CRAN.R-project.org>）及其他平台还可获取更多资源。关于扩展包的详细信息将在后文说明（参见 [Packages](https://cran.r-project.org/doc/manuals/r-release/R-intro.html#Packages) 章节）。
 
 虽然 R 支持绝大多数经典统计方法和许多最新技术，但用户可能需要主动探索才能充分调用这些功能。
 
@@ -92,7 +92,7 @@ $ R
 
 ## 1.6 一个入门会话
 
-强烈建议想要在上机操作前先感受 R 语言的读者，先完成 A sample session 中提供的入门教程：`https://cran.r-project.org/doc/manuals/r-release/R-intro.html#A-sample-session`
+强烈建议想要在上机操作前先感受 R 语言的读者，先完成 [A sample session](https://cran.r-project.org/doc/manuals/r-release/R-intro.html#A-sample-session) 中提供的入门教程。
 
 
 ## 1.7 获得函数和功能的帮助
@@ -163,11 +163,11 @@ Windows 版 R 还提供其他可选帮助系统，使用：
 
 ## 1.9 召回和纠正以前的命令
 
-在多数 UNIX 系统和 Windows 系统中，R 提供了调用和重新执行历史命令的功能。通过键盘的上下方向键，可前后浏览命令历史记录。定位到所需命令后，使用左右方向键移动光标进行编辑：用 `DEL` 键删除字符，或用其他键插入字符。更多细节将在后续章节说明，参见 The command-line editor 部分：`https://cran.r-project.org/doc/manuals/r-release/R-intro.html#The-command_002dline-editor`
+在多数 UNIX 系统和 Windows 系统中，R 提供了调用和重新执行历史命令的功能。通过键盘的上下方向键，可前后浏览命令历史记录。定位到所需命令后，使用左右方向键移动光标进行编辑：用 `DEL` 键删除字符，或用其他键插入字符。更多细节将在后续章节说明，参见 [The command-line editor](https://cran.r-project.org/doc/manuals/r-release/R-intro.html#The-command_002dline-editor) 部分。
 
 UNIX 系统下的命令调取与编辑功能支持高度自定义，具体配置方法可参考 **readline** 函数库的说明文档。
 
-此外，Emacs 文本编辑器通过 ESS（Emacs Speaks Statistics）为 R 的交互操作提供了更全面的支持机制。详细信息请参阅 R 常见问题中的 R and Emacs 章节：`https://cran.r-project.org/doc/manuals/r-release/R-FAQ.html#R-and-Emacs`
+此外，Emacs 文本编辑器通过 ESS（Emacs Speaks Statistics）为 R 的交互操作提供了更全面的支持机制。详细信息请参阅 R 常见问题中的 [R and Emacs](https://cran.r-project.org/doc/manuals/r-release/R-FAQ.html#R-and-Emacs) 章节。
 
 
 ## 1.10 执行从输出或将输出转移到文件的命令
